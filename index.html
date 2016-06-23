@@ -2,16 +2,18 @@
 <html lang="ja">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/divider.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/button.min.css">
   <title>MichiEki Test Client</title>
 </head>
-<body>
+<body style="text-align: center;">
   <div class="container">
-    <button class="btn" onclick="doInfo()">info</button>
-    <hr>
-    <button class="btn" onclick="doPing()">ping</button>
-    <hr>
+    <button id="info" class="ui orange button">info</button>
+    <div class="ui divider"></div>
+    <button id="ping" class="ui teal button">ping</button>
+    <div class="ui divider"></div>
   </div>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="main.js"></script>
 </html>
