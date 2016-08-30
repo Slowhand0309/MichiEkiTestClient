@@ -1,12 +1,7 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text } from 'react-native';
+'use strict';
 
-class ekibito extends Component {
-  render() {
-    return (
-      <Text>Hello world!</Text>
-    );
-  }
-}
+import { AppRegistry } from 'react-native';
+
+import ekibito from './src/ekibito';
 
 AppRegistry.registerComponent('ekibito', () => ekibito);
