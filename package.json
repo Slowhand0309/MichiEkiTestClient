@@ -1,16 +1,16 @@
 {
   "name": "ekibito",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "ios": "react-native run-ios",
-    "android": "react-native run-android"
+  "description": "It is a mobile application that manages to visited the station of the road.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Slowhand0309/ekibito.git"
   },
-  "dependencies": {
-    "react": "15.3.1",
-    "react-native": "0.32.0",
-    "react-native-button": "^1.6.0",
-    "react-native-router-flux": "^3.35.0"
+  "author": "Slowhand0309",
+  "license": "MIT",
+  "main": "index.js",
+  "homepage": "https://github.com/Slowhand0309/ekibito",
+  "devDependencies": {
+    "phonegap-grunt": "git://github.com/Slowhand0309/phonegap-grunt.git"
   }
 }
