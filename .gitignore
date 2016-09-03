@@ -12,3 +12,7 @@ plugins/
 #
 node_modules/
 npm-debug.log
+
+# Vendor
+#
+www/vendor/
