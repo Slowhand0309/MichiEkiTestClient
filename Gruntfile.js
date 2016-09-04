@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       },
       // Build android and ios platforms.
       build: {
-        platform: 'ios'
+        platform: ['android', 'ios']
       },
       // Run android platform.
       run: {
