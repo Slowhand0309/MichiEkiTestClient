@@ -2,24 +2,39 @@
  * Main javascript object.
  * @type {Object}
  */
+'use strict';
 
 var Index = {
 
+  mapObj: null,
+
+  /**
+   * Initialize.
+   */
   initialize: function() {
     this.bindEvents();
     this.adjust();
   },
 
+  /**
+   * Bind events.
+   */
   bindEvents: function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
   },
 
+  /**
+   * Call when device ready state.
+   */
   onDeviceReady: function() {
 
-    var div = document.getElementById("map_canvas");
-    map = plugin.google.maps.Map.getMap(div);
+    this.mapObj = new Map();
+    this.mapObj.moveMyLocation();
   },
 
+  /**
+   * Adjust size.
+   */
   adjust: function() {
     // Set grid height.
     var h = $('#card_board').height();
