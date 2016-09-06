@@ -21,6 +21,11 @@ var Index = {
    */
   bindEvents: function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
+
+    // Modal dialog.
+    $('.ui.card').on('click', function() {
+      $('.ui.modal').modal('show');      
+    });
   },
 
   /**
