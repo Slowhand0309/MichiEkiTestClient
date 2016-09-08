@@ -2,49 +2,53 @@
  * DataStore javascript object.
  * @type {Object}
  */
+
+;(function(global, $) {
 'use strict';
 
-var DataStore = {
+  global.DataStore = {
+    USER_NAME: 'user_name',
+    USER_LOCATION: 'user_location',
+    USER_IMAGE: 'user_image'
+  };
 
-  USER_NAME: 'user_name',
-  USER_LOCATION: 'user_location',
-  USER_IMAGE: 'user_image',
+  var store = global.DataStore;
 
   /**
    * Get user name.
    *
    * @return {String} name
    */
-  getUserName: function() {
+  store.getUserName = function() {
     return this.getValue(this.USER_NAME, '');
-  },
+  }
 
   /**
    * Set user name.
    *
    * @param {String} name
    */
-  setUserName: function(name) {
+  store.setUserName = function(name) {
     localStorage.setItem(this.USER_NAME ,name);
-  },
+  }
 
   /**
    * Get user location.
    *
    * @return {Object} location
    */
-  getUserLocation: function() {
+  store.getUserLocation = function() {
     return this.getValue(this.USER_LOCATION, null);
-  },
+  }
 
   /**
    * Set user location.
    *
    * @param {Object} location
    */
-  setUserLocation: function(location) {
+  store.setUserLocation = function(location) {
     localStorage.setItem(this.USER_LOCATION ,location);
-  },
+  }
 
   /**
    * Get value with key.
@@ -53,8 +57,9 @@ var DataStore = {
    * @param  {Object} defaultValue
    * @return {Object} value
    */
-  getValue: function(key, defaultValue) {
+  store.getValue = function(key, defaultValue) {
     var result = localStorage.getItem(key);
     return result || defaultValue;
   }
-};
+
+}(this, jQuery));
