@@ -11,12 +11,14 @@ body {
 #map_canvas {
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 #card_board {
   width: 100%;
   height: 50%;
   background: #9DBDC6;
+  z-index: 0;
 }
 
 .grid {
@@ -29,4 +31,8 @@ body {
 
 .list {
   overflow: scroll !important;
+}
+
+.ui.modal {
+  z-index: 10 !important;
 }

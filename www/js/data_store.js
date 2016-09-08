@@ -10,7 +10,7 @@
     USER_NAME: 'user_name',
     USER_LOCATION: 'user_location',
     USER_IMAGE: 'user_image'
-  };
+  }
 
   var store = global.DataStore;
 

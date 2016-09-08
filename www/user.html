@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+  <link rel="stylesheet" type="text/css" href="vendor/semantic/dist/semantic.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/user.css" />
+  <title>user</title>
+</head>
+<body>
+  <div class="ui top attached menu">
+    <div class="ui icon item">
+      <i class="arrow left icon"></i>
+    </div>
+  </div>
+  <!-- User information edit.-->
+  <div class="container">
+    <h2 class="ui icon header">
+      <i class="settings icon"></i>
+      <div class="content">Account Settings</div>
+    </h2>
+    <div class="ui divider"></div>
+    <div class="content">
+
+      <div class="ui internally celled grid">
+        <div class="row">
+          <div class="ten wide column">
+            <div class="ui fluid left icon focus input">
+              <input type="text" placeholder="user name">
+              <i class="user icon"></i>
+            </div>
+            <br>
+            <div class="ui fluid left icon focus input">
+              <input type="text" placeholder="home location">
+              <i class="home icon"></i>
+            </div>
+          </div>
+          <div class="five wide column">
+            <img class="ui right floated circular image" src="img/no_image.png">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="ui divider"></div>
+    <div class="actions">
+      <div class="ui red button">
+        Clear
+      </div>
+      <div class="ui positive right labeled icon button">
+        Save
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- javascript -->
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="vendor/semantic/dist/semantic.min.js"></script>
+  <script type="text/javascript" src="js/user.js"></script>
+</body>
+</html>

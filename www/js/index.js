@@ -2,45 +2,49 @@
  * Main javascript object.
  * @type {Object}
  */
-'use strict';
 
-var Index = {
+;(function(global, $) {
+  'use strict';
 
-  mapObj: null,
+  global.Index = {
+    mapObj: null,
+  }
+
+  var index = global.Index;
 
   /**
    * Initialize.
    */
-  initialize: function() {
+  index.initialize = function() {
     this.bindEvents();
     this.adjust();
-  },
+  }
 
   /**
    * Bind events.
    */
-  bindEvents: function() {
+  index.bindEvents = function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
 
     // Modal dialog.
     $('.ui.card').on('click', function() {
-      $('.ui.modal').modal('show');      
+      location.href = 'user.html';
     });
-  },
+  }
 
   /**
    * Call when device ready state.
    */
-  onDeviceReady: function() {
+  index.onDeviceReady = function() {
 
     this.mapObj = new Map();
     this.mapObj.moveMyLocation();
-  },
+  }
 
   /**
    * Adjust size.
    */
-  adjust: function() {
+  index.adjust = function() {
     // Set grid height.
     var h = $('#card_board').height();
     $('#card_board>.grid').height(h);
@@ -50,6 +54,8 @@ var Index = {
     var imgHeight = h - $('.extra.content').innerHeight();
     $('.ui.card>.image').height(imgHeight);
   }
-};
 
+}(this, jQuery));
+
+// Do initialize.
 Index.initialize();
