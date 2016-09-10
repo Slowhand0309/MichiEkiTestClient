@@ -25,11 +25,6 @@
    */
   index.bindEvents = function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
-
-    // Modal dialog.
-    $('.ui.card').on('click', function() {
-      location.href = 'user.html';
-    });
   }
 
   /**
@@ -37,8 +32,20 @@
    */
   index.onDeviceReady = function() {
 
-    this.mapObj = new Map();
-    this.mapObj.moveMyLocation();
+    $(function() {
+      FastClick.attach(document.body);
+    });
+
+    var self = this;
+    self.mapObj = new Map();
+    self.mapObj.moveMyLocation();
+
+    // User edit page.
+    $('.ui.card').on('click', function() {
+      self.mapObj.remove();
+      location.href = 'user.html';
+    });
+
   }
 
   /**

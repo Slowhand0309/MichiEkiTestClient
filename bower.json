@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "jquery": "^3.1.0",
-    "semantic": "^2.2.4"
+    "semantic": "^2.2.4",
+    "fastclick": "^1.0.6"
   }
 }

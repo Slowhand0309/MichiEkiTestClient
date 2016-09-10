@@ -26,6 +26,10 @@
     $('.menu .arrow').on('click', function() {
       location.href = 'index.html';
     });
+    
+    $(function() {
+      FastClick.attach(document.body);
+    });
   }
 
 }(this, jQuery));
