@@ -30,12 +30,12 @@
         <div class="row">
           <div class="ten wide column">
             <div class="ui fluid left icon focus input">
-              <input type="text" placeholder="user name">
+              <input id="user_name_input" type="text" placeholder="user name">
               <i class="user icon"></i>
             </div>
             <br>
             <div class="ui fluid left icon focus input">
-              <input type="text" placeholder="home location">
+              <input id="location_input" type="text" placeholder="home location">
               <i class="home icon"></i>
             </div>
           </div>
@@ -48,10 +48,10 @@
     </div>
     <div class="ui divider"></div>
     <div class="actions">
-      <div class="ui red button">
+      <div class="ui red button cancel">
         Clear
       </div>
-      <div class="ui positive right labeled icon button">
+      <div class="ui positive right labeled icon button save">
         Save
         <i class="checkmark icon"></i>
       </div>
@@ -63,6 +63,7 @@
   <script type="text/javascript" src="vendor/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="vendor/semantic/dist/semantic.min.js"></script>
   <script type="text/javascript" src="vendor/fastclick/lib/fastclick.js"></script>
+  <script type="text/javascript" src="js/data_store.js"></script>
   <script type="text/javascript" src="js/user.js"></script>
 </body>
 </html>

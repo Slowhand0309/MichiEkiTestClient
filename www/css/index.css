@@ -36,3 +36,9 @@ body {
 .ui.modal {
   z-index: 10 !important;
 }
+
+.ui.card > .image > img {
+  max-width: 200px;
+  max-height: 150px;
+  padding: 5px;
+}

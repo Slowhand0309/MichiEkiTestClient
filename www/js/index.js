@@ -17,7 +17,7 @@
    */
   index.initialize = function() {
     this.bindEvents();
-    this.adjust();
+    this.setupCard();
   }
 
   /**
@@ -49,9 +49,9 @@
   }
 
   /**
-   * Adjust size.
+   * Adjust size and restore user information.
    */
-  index.adjust = function() {
+  index.setupCard = function() {
     // Set grid height.
     var h = $('#card_board').height();
     $('#card_board>.grid').height(h);
@@ -60,6 +60,10 @@
     h = $('.column.card').height();
     var imgHeight = h - $('.extra.content').innerHeight();
     $('.ui.card>.image').height(imgHeight);
+
+    var name = DataStore.getUserName();
+    $('.extra.content>a>div').text(name);
+
   }
 
 }(this, jQuery));
