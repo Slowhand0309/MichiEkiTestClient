@@ -35,10 +35,27 @@
       location.href = 'index.html';
     });
 
+    $('.user_image').on('click', function() {
+      self.onSelectImage();
+    });
+
     var self = this;
     $('.actions>.save').on('click', function() {
       self.onSave();
     });
+  }
+
+  user.onSelectImage = function() {
+    navigator.camera.getPicture(
+      function(imageData) {
+        var base64 = 'data:image/jpeg;base64,' + imageData;
+        $('.user_image>img').attr('src', base64);
+      }, function(message) {
+        alert('Select image failed. ' + message);
+      }, {
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+      });
   }
 
   /**
