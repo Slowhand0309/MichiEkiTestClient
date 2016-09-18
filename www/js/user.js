@@ -17,6 +17,12 @@
    */
   user.initialize = function() {
     this.bindEvents();
+
+    // Restore user image.
+    var image = DataStore.getUserImage();
+    if (image) {
+      $('.user_image>img').attr('src', image);
+    }
   }
 
   /**
@@ -45,11 +51,17 @@
     });
   }
 
+  /**
+   * Call when tap image.
+   */
   user.onSelectImage = function() {
     navigator.camera.getPicture(
       function(imageData) {
         var base64 = 'data:image/jpeg;base64,' + imageData;
         $('.user_image>img').attr('src', base64);
+        // Save to localStorage.
+        DataStore.setUserImage(base64);
+
       }, function(message) {
         alert('Select image failed. ' + message);
       }, {

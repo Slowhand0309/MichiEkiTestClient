@@ -51,6 +51,24 @@
   }
 
   /**
+   * Get user image.
+   *
+   * @return {String} image(base64 format)
+   */
+  store.getUserImage = function() {
+    return this.getValue(this.USER_IMAGE, '');
+  }
+
+  /**
+   * Set user image.
+   *
+   * @param {String} base64(base64 format)
+   */
+  store.setUserImage = function(base64) {
+    localStorage.setItem(this.USER_IMAGE ,base64);
+  }
+  
+  /**
    * Get value with key.
    *
    * @param  {String} key
