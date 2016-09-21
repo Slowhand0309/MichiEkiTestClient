@@ -64,6 +64,11 @@
     var name = DataStore.getUserName();
     $('.extra.content>a>div').text(name);
 
+    // Restore user image.
+    var image = DataStore.getUserImage();
+    if (image) {
+      $('.ui.card>.image>img').attr('src', image);
+    }
   }
 
 }(this, jQuery));
