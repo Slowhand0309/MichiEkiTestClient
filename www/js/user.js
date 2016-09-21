@@ -18,6 +18,18 @@
   user.initialize = function() {
     this.bindEvents();
 
+    // Restore user name.
+    var name = DataStore.getUserName();
+    if (name) {
+      $('#user_name_input').val(name);
+    }
+
+    // Restore user location.
+    var location = DataStore.getUserLocation();
+    if (location) {
+      $('#location_input').val(location);
+    }
+    
     // Restore user image.
     var image = DataStore.getUserImage();
     if (image) {
