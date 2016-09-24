@@ -21,15 +21,15 @@
     // Restore user name.
     var name = DataStore.getUserName();
     if (name) {
-      $('#user_name_input').val(name);
+      $('#user_name_input>input').val(name);
     }
 
     // Restore user location.
     var location = DataStore.getUserLocation();
     if (location) {
-      $('#location_input').val(location);
+      $('#location_input>input').val(location);
     }
-    
+
     // Restore user image.
     var image = DataStore.getUserImage();
     if (image) {
@@ -69,15 +69,14 @@
   user.onSelectImage = function() {
     navigator.camera.getPicture(
       function(imageData) {
-        var base64 = 'data:image/jpeg;base64,' + imageData;
-        $('.user_image>img').attr('src', base64);
-        // Save to localStorage.
-        DataStore.setUserImage(base64);
+        //base64 = 'data:image/jpeg;base64,' + imageData;
+        $('.user_image>img').attr('src', imageData);
+        DataStore.setUserImage(imageData);
 
       }, function(message) {
-        alert('Select image failed. ' + message);
+        Common.alert('Select image failed. ' + message);
       }, {
-        destinationType: Camera.DestinationType.DATA_URL,
+        destinationType: Camera.DestinationType.FILE_URI,
         sourceType: Camera.PictureSourceType.PHOTOLIBRARY
       });
   }
@@ -88,12 +87,18 @@
    * @return {Boolean} False if invalid.
    */
   user.validate = function() {
-    var name = $('#user_name_input').val();
+    var name = $('#user_name_input>input').val();
     if (!name) {
+      if (!$('#user_name_input').hasClass('error')) {
+        $('#user_name_input').addClass('error');
+      }
       return false;
     }
-    var location = $('#location_input').val();
+    var location = $('#location_input>input').val();
     if (!location) {
+      if (!$('#location_input').hasClass('error')) {
+        $('#location_input').addClass('error');
+      }
       return false;
     }
     return true;
@@ -104,16 +109,15 @@
    */
   user.onSave = function() {
     if (!this.validate()) {
-      alert('Save error.')
+      Common.alert('Save error.')
       return;
     }
     // Set user name to localStorage.
-    DataStore.setUserName($('#user_name_input').val());
-
+    DataStore.setUserName($('#user_name_input>input').val());
     // Set user location to localStorage.
-    DataStore.setUserLocation($('#location_input').val());
+    DataStore.setUserLocation($('#location_input>input').val());
 
-    alert('Save success.')
+    Common.alert('Save success.')
   }
 
 }(this, jQuery));
