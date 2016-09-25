@@ -12,6 +12,7 @@
     <title>Main</title>
 </head>
 <body>
+    <!-- Menu -->
     <div class="ui top attached menu">
       <div class="ui icon item">
         <i class="close icon"></i>
@@ -22,26 +23,50 @@
         </div>
       </div>
     </div>
+
+    <!-- Main container -->
     <div class="container">
       <div id="map_canvas"></div>
       <div id="card_board" class="ui raised segment">
         <div class="ui two column grid">
-          <div class="column list">
-            <div class="ui middle aligned divided list">
-              <!-- <div class="item">
+          <!-- one column : show user status -->
+          <div class="column information">
+            <div class="ui items">
+              <div class="item">
                 <div class="content">
-                  <a class="header">Daniel Louise</a>
+                  <div class="header">
+                    <i class="user icon"></i>
+                    <span id="user_name">Name</span>
+                  </div>
+                  <div class="meta">
+                    <span id="user_location">Location</span>
+                  </div>
+                  <div class="ui divider"></div>
+                  <!-- Station information -->
+                  <div class="description">
+                    <div class="ui vertical compact menu">
+                      <a class="item">
+                        <i class="icon car"></i> Complete
+                        <div class="floating ui red label">0</div>
+                      </a>
+                      <a class="item">
+                        <i class="icon users"></i> Friends
+                        <div class="floating ui teal label">0</div>
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
+          <!-- two column : show user image -->
           <div class="column card">
             <div class="ui card">
               <div class="image">
                 <img src="">
               </div>
               <div class="extra content">
-                <a><i class="user icon"></i><div>Name</div></a>
+                <a><i class="edit icon"></i><span>Edit</span></a>
               </div>
             </div>
           </div>

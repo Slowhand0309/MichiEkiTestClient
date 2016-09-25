@@ -17,7 +17,7 @@
    */
   index.initialize = function() {
     this.bindEvents();
-    this.setupCard();
+    this.adjustSize();
   }
 
   /**
@@ -31,7 +31,6 @@
    * Call when device ready state.
    */
   index.onDeviceReady = function() {
-
     $(function() {
       FastClick.attach(document.body);
     });
@@ -46,12 +45,36 @@
       location.href = 'user.html';
     });
 
+    index.setUserInformation();
+  }
+
+  /**
+   * Set user information.
+   */
+  index.setUserInformation = function() {
+    // Set user name.
+    var name = DataStore.getUserName();
+    if (name) {
+      $('#user_name').text(name);
+    }
+
+    // Set user location.
+    var location = DataStore.getUserLocation();
+    if (location) {
+      $('#user_location').text(location);
+    }
+
+    // Set user image.
+    var image = DataStore.getUserImage();
+    if (image) {
+      $('.ui.card>.image>img').attr('src', image);
+    }
   }
 
   /**
    * Adjust size and restore user information.
    */
-  index.setupCard = function() {
+  index.adjustSize = function() {
     // Set grid height.
     var h = $('#card_board').height();
     $('#card_board>.grid').height(h);
@@ -60,15 +83,6 @@
     h = $('.column.card').height();
     var imgHeight = h - $('.extra.content').innerHeight();
     $('.ui.card>.image').height(imgHeight);
-
-    var name = DataStore.getUserName();
-    $('.extra.content>a>div').text(name);
-
-    // Restore user image.
-    var image = DataStore.getUserImage();
-    if (image) {
-      $('.ui.card>.image>img').attr('src', image);
-    }
   }
 
 }(this, jQuery));

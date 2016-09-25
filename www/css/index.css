@@ -17,7 +17,7 @@ body {
 #card_board {
   width: 100%;
   height: 50%;
-  background: #9DBDC6;
+  background: #f0f8ff;
   z-index: 0;
 }
 
@@ -37,7 +37,7 @@ body {
   z-index: 10 !important;
 }
 
-.ui.card > .image > img {
+.image > img {
   max-width: 200px;
   max-height: 150px;
   padding: 5px;
