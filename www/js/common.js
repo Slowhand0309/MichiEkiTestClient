@@ -30,4 +30,42 @@
     }
   }
 
+  /**
+   * GET method.
+   *
+   * @param  {String} url
+   * @param  {Object} params
+   * @param  {Callback} onSuccess
+   * @param  {Callback} onError
+   */
+  common.getJson = function(url, params, onSuccess, onError) {
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'json',
+      data: params,
+      success: onSuccess,
+      error: onError
+    });
+  }
+
+  /**
+   * POST method.
+   *
+   * @param  {String} url
+   * @param  {Object} params
+   * @param  {Callback} onSuccess
+   * @param  {Callback} onError
+   */
+  common.postJson = function(url, params, onSuccess, onError) {
+    $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'json',
+      data: params,
+      success: onSuccess,
+      error: onError
+    });
+  }
+
 }(this, jQuery));
