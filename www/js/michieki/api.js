@@ -65,5 +65,28 @@ API = (function() {
     Common.getJson(url, params, onSuccess, onError);
   }
 
+  /**
+   * Get road station list.
+   *
+   * @param  {String} area
+   * @param  {String} name
+   * @param  {Callback} onSuccess
+   * @param  {Callback} onError
+   */
+  api.prototype.list = function(area, name, onSuccess, onError) {
+
+    var url = this.baseUrl + '/list';
+    var params = {}
+    if (area) {
+      params['area'] = area;
+    }
+
+    if (name) {
+      params['name'] = name;
+    }
+    // Get response.
+    Common.getJson(url, params, onSuccess, onError);
+  }
+
   return api;
 }());
