@@ -35,10 +35,6 @@
       FastClick.attach(document.body);
     });
 
-    var self = this;
-    self.mapObj = new Map();
-    self.mapObj.moveMyLocation();
-
     // User edit page.
     $('.ui.card').on('click', function() {
       self.mapObj.remove();
@@ -46,6 +42,14 @@
     });
 
     index.setUserInformation();
+
+    var self = this;
+    self.mapObj = new Map();
+    self.mapObj.moveMyLocation(function(marker) {
+      self.mapObj.addRoadStationMarker();
+    });
+    
+
   }
 
   /**
