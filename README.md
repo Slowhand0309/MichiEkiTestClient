@@ -2,6 +2,10 @@
 
 It is a mobile application that manages to visited the station of the road.
 
+## Screenshot
+
+![home](https://raw.githubusercontent.com/Slowhand0309/ekibito/master/screenshot/home_screen.png)
+
 ## Require
 
 * **[node.js(npm)](https://nodejs.org/en/)**
