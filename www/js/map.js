@@ -62,7 +62,10 @@ Map = (function() {
             'animation': plugin.google.maps.Animation.BOUNCE
           }, function(marker) {
             if (self.onSuccess) {
-              self.onSuccess(marker);
+              self.isConnected(function() {
+                // Server connected.
+                self.onSuccess(marker);
+              });
             }
           });
 
@@ -71,6 +74,23 @@ Map = (function() {
         alert("error: " + msg);
       });
     }
+  };
+
+  /**
+   * Check server connection.
+   *
+   * @param  {Callback}  onSuccess
+   */
+  _map.prototype.isConnected = function(onSuccess) {
+    // Check michieki server.
+    this.api.ping(
+      function(data) {
+      // On Success.
+      onSuccess();
+    }, function(msg) {
+      // On Error.
+      Common.alert("Not connected MichiEki server!!");
+    });
   };
 
   /**

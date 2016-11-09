@@ -7,8 +7,7 @@
   'use strict';
 
   global.Index = {
-    mapObj: null,
-    mchiekiApi: null,
+    mapObj: null
   }
 
   var index = global.Index;
@@ -48,16 +47,6 @@
     self.mapObj = new Map();
     self.mapObj.moveMyLocation(function(marker) {
       self.mapObj.addRoadStationMarker();
-    });
-
-    // Check michieki server.
-    self.mchiekiApi = new API();
-    self.mchiekiApi.ping(
-      function(data) {
-      // On Success.
-    }, function(msg) {
-      // On Error.
-      Common.alert("Not connected MichiEki server!!");
     });
   }
 
