@@ -112,6 +112,26 @@ Map = (function() {
   };
 
   /**
+   * Mark road station on map.
+   *
+   * @param  {Array} data Road station list.
+   */
+  _map.prototype.markRoadStationList = function(data) {
+    var self = this;
+    $.each(data, function(i, v) {
+      console.log("add road station: " + v.name);
+
+      var latLng = { 'lat': v.lat, 'lng': v.lng };
+      self.map.addMarker({
+        'position': latLng,
+        'animation': plugin.google.maps.Animation.BOUNCE
+      }, function(marker) {
+          // Do nothing.
+      });
+    });
+  };
+
+  /**
    * Remove map.
    */
   _map.prototype.remove = function() {
