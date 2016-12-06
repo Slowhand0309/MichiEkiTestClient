@@ -18,6 +18,7 @@ Map = (function() {
 
     // Set configuration.
     this.map.setMyLocationEnabled(true);
+
     // Bind event.
     this.map.addEventListener(
       plugin.google.maps.event.MAP_READY, this.moveMyLocation);
@@ -97,13 +98,13 @@ Map = (function() {
    * Add road station marker.
    */
   _map.prototype.addRoadStationMarker = function() {
+    var self = this;
     this.api.search(
       this.location.latLng.lat,
       this.location.latLng.lng,
       null,
       function(data) {
-        // TODO
-        console.log(data);
+        self.markRoadStationList(data);
       },
       function(msg) {
         Common.alert('Search error', msg);
@@ -126,7 +127,7 @@ Map = (function() {
         'position': latLng,
         'animation': plugin.google.maps.Animation.BOUNCE
       }, function(marker) {
-          // Do nothing.
+          marker.showInfoWindow();
       });
     });
   };
