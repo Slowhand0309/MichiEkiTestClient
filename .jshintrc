@@ -1,0 +1,30 @@
+{
+  "globals": {
+    "navigator": false,
+    "window": false,
+    "jQuery": false,
+    "$": false,
+    "localStorage": false,
+    "document": false,
+    "FastClick": false,
+    "location": false,
+    "Map": false,
+    "DataStore": false,
+    "plugin": false,
+    "API": false,
+    "Common": false,
+    "Camera": false,
+    "Index": false,
+    "alert": false,
+    "User": false
+  },
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "latedef": true,
+  "newcap": true,
+  "undef": true,
+  "unused": true,
+  "eqnull": false,
+  "node": true
+}

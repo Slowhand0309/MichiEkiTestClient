@@ -7,7 +7,7 @@
 
   global.Common = {
 
-  }
+  };
 
   var common = global.Common;
 
@@ -28,7 +28,7 @@
     } else {
       window.alert(msg);
     }
-  }
+  };
 
   /**
    * GET method.
@@ -47,7 +47,7 @@
       success: onSuccess,
       error: onError
     });
-  }
+  };
 
   /**
    * POST method.
@@ -66,6 +66,6 @@
       success: onSuccess,
       error: onError
     });
-  }
+  };
 
 }(this, jQuery));

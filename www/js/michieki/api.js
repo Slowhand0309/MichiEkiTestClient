@@ -15,7 +15,7 @@ API = (function() {
    */
   var api = function(url) {
     this.baseUrl = url || BASE_URL;
-  }
+  };
 
   /**
    * Ping to server.
@@ -28,7 +28,7 @@ API = (function() {
     var url = this.baseUrl + '/ping';
     // Get response.
     Common.getJson(url, null, onSuccess, onError);
-  }
+  };
 
   /**
    * Get information.
@@ -41,7 +41,7 @@ API = (function() {
     var url = this.baseUrl + '/info';
     // Get response.
     Common.getJson(url, null, onSuccess, onError);
-  }
+  };
 
   /**
    * Search road stations.
@@ -63,7 +63,7 @@ API = (function() {
     };
     // Get response.
     Common.getJson(url, params, onSuccess, onError);
-  }
+  };
 
   /**
    * Get road station list.
@@ -76,17 +76,17 @@ API = (function() {
   api.prototype.list = function(area, name, onSuccess, onError) {
 
     var url = this.baseUrl + '/list';
-    var params = {}
+    var params = {};
     if (area) {
-      params['area'] = area;
+      params.area = area;
     }
 
     if (name) {
-      params['name'] = name;
+      params.name = name;
     }
     // Get response.
     Common.getJson(url, params, onSuccess, onError);
-  }
+  };
 
   return api;
 }());

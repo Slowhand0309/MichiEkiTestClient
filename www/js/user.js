@@ -3,12 +3,12 @@
  * @type {Object}
  */
 
-;(function(global, $) {
+;(function(global) {
   'use strict';
 
   global.User = {
 
-  }
+  };
 
   var user = global.User;
 
@@ -35,12 +35,13 @@
     if (image) {
       $('.user_image>img').attr('src', image);
     }
-  }
+  };
 
   /**
    * Bind events.
    */
   user.bindEvents = function() {
+    var self = this;
     $(function() {
       FastClick.attach(document.body);
     });
@@ -57,11 +58,10 @@
       self.onSelectImage();
     });
 
-    var self = this;
     $('.actions>.save').on('click', function() {
       self.onSave();
     });
-  }
+  };
 
   /**
    * Call when tap image.
@@ -79,7 +79,7 @@
         destinationType: Camera.DestinationType.FILE_URI,
         sourceType: Camera.PictureSourceType.PHOTOLIBRARY
       });
-  }
+  };
 
   /**
    * Validate input values.
@@ -102,14 +102,14 @@
       return false;
     }
     return true;
-  }
+  };
 
   /**
    * Call when push save button.
    */
   user.onSave = function() {
     if (!this.validate()) {
-      Common.alert('Save error.')
+      Common.alert('Save error.');
       return;
     }
     // Set user name to localStorage.
@@ -117,8 +117,8 @@
     // Set user location to localStorage.
     DataStore.setUserLocation($('#location_input>input').val());
 
-    Common.alert('Save success.')
-  }
+    Common.alert('Save success.');
+  };
 
 }(this, jQuery));
 

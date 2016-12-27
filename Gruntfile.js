@@ -1,11 +1,22 @@
+'use strict';
+
 module.exports = function(grunt) {
 
   // Load npm tasks.
   grunt.loadNpmTasks('phonegap-grunt');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Configuration.
   grunt.initConfig({
 
+    jshint: {
+         all: [
+             'www/js/**/*.js'
+         ],
+         options: {
+           jshintrc: '.jshintrc'
+         }
+     },
     // phonegap-grunt config.
     pg: {
       // Project create.
@@ -32,4 +43,6 @@ module.exports = function(grunt) {
       }
     }
   });
+
+  grunt.registerTask('default', ['jshint']);
 };

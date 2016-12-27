@@ -85,10 +85,10 @@ Map = (function() {
   _map.prototype.isConnected = function(onSuccess) {
     // Check michieki server.
     this.api.ping(
-      function(data) {
+      function() {
       // On Success.
       onSuccess();
-    }, function(msg) {
+    }, function() {
       // On Error.
       Common.alert("Not connected MichiEki server!!");
     });
@@ -137,7 +137,7 @@ Map = (function() {
    */
   _map.prototype.remove = function() {
     this.map.remove();
-  }
+  };
 
   return _map;
 }());

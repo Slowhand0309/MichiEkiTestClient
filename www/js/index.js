@@ -3,12 +3,12 @@
  * @type {Object}
  */
 
-;(function(global, $) {
+;(function(global) {
   'use strict';
 
   global.Index = {
     mapObj: null
-  }
+  };
 
   var index = global.Index;
 
@@ -18,19 +18,20 @@
   index.initialize = function() {
     this.bindEvents();
     this.adjustSize();
-  }
+  };
 
   /**
    * Bind events.
    */
   index.bindEvents = function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
-  }
+  };
 
   /**
    * Call when device ready state.
    */
   index.onDeviceReady = function() {
+    var self = this;
     $(function() {
       FastClick.attach(document.body);
     });
@@ -42,13 +43,11 @@
     });
 
     index.setUserInformation();
-
-    var self = this;
     self.mapObj = new Map();
-    self.mapObj.moveMyLocation(function(marker) {
+    self.mapObj.moveMyLocation(function() {
       self.mapObj.addRoadStationMarker();
     });
-  }
+  };
 
   /**
    * Set user information.
@@ -71,7 +70,7 @@
     if (image) {
       $('.ui.card>.image>img').attr('src', image);
     }
-  }
+  };
 
   /**
    * Adjust size and restore user information.
@@ -85,7 +84,7 @@
     h = $('.column.card').height();
     var imgHeight = h - $('.extra.content').innerHeight();
     $('.ui.card>.image').height(imgHeight);
-  }
+  };
 
 }(this, jQuery));
 

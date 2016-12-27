@@ -3,14 +3,14 @@
  * @type {Object}
  */
 
-;(function(global, $) {
+;(function(global) {
 'use strict';
 
   global.DataStore = {
     USER_NAME: 'user_name',
     USER_LOCATION: 'user_location',
     USER_IMAGE: 'user_image'
-  }
+  };
 
   var store = global.DataStore;
 
@@ -21,7 +21,7 @@
    */
   store.getUserName = function() {
     return this.getValue(this.USER_NAME, '');
-  }
+  };
 
   /**
    * Set user name.
@@ -30,7 +30,7 @@
    */
   store.setUserName = function(name) {
     localStorage.setItem(this.USER_NAME ,name);
-  }
+  };
 
   /**
    * Get user location.
@@ -39,7 +39,7 @@
    */
   store.getUserLocation = function() {
     return this.getValue(this.USER_LOCATION, null);
-  }
+  };
 
   /**
    * Set user location.
@@ -48,7 +48,7 @@
    */
   store.setUserLocation = function(location) {
     localStorage.setItem(this.USER_LOCATION ,location);
-  }
+  };
 
   /**
    * Get user image.
@@ -57,7 +57,7 @@
    */
   store.getUserImage = function() {
     return this.getValue(this.USER_IMAGE, '');
-  }
+  };
 
   /**
    * Set user image.
@@ -66,8 +66,8 @@
    */
   store.setUserImage = function(base64) {
     localStorage.setItem(this.USER_IMAGE ,base64);
-  }
-  
+  };
+
   /**
    * Get value with key.
    *
@@ -78,6 +78,6 @@
   store.getValue = function(key, defaultValue) {
     var result = localStorage.getItem(key);
     return result || defaultValue;
-  }
+  };
 
 }(this, jQuery));
